@@ -9,15 +9,37 @@ Aggiungerei: ocio  a non incasinarvi sui calcoli matematici, alla fine dovete ap
 Buon viaggio :stazione:
 */
 
+const indexPrice = 0.21;
 // chiedere al cliente i km da percorrere
-let km = prompt("Indicare i chilometri da percorrere");
+const km = prompt("Indicare i chilometri da percorrere");
 // chiedere al cliente età
-let age = prompt("Inserire l'et&agrave; del viaggiatore");
+const age = prompt("Inserire l'età del viaggiatore");
 
-console.log(km),age;
 // calcolare prezzo intero del biglietto
+let ticketPrice = (km*indexPrice);
+console.log(km,age,ticketPrice);
 
-// se il cliente ha un'èta inferiore ai 18 anni applicare 20% di sconto
-// se il cliente ha un'èta superiore ai 65 anni applicare 40% di sconto
+// Se il cliente ha un'età compresa tra  i 18 e 66 anni allora non va applicato nessuno sconto
+if (age<18 || age>65){
+    if(age<18){ // se il cliente ha un'èta inferiore ai 18 anni applicare 20% di sconto
+        ticketPrice = ticketPrice-((ticketPrice*20)/100);
+        //console.log(ticketPrice);
+        document.getElementById("ticket").innerHTML = 
+        `Il costo del biglietto per il suo viaggio è: ${ticketPrice.toFixed(2)} 
+        già scontato del 20% avendo lei meno di 18 anni`;
+    }
+    else{// se il cliente ha un'èta superiore ai 65 anni applicare 40% di sconto
+        ticketPrice = ticketPrice-((ticketPrice*40)/100);
+        //console.log(ticketPrice);
+        document.getElementById("ticket").innerHTML = 
+        `Il costo del biglietto per il suo viaggio è: ${ticketPrice.toFixed(2)} 
+        già scontato del 40% avendo lei più di 65 anni`;
+    }
+}else{// output costo esatto del biglietto con max 2 decimali
+    document.getElementById("ticket").innerHTML = 
+    `Il costo del biglietto per il suo viaggio è: ${ticketPrice.toFixed(2)}`;
+}
 
-// output costo esatto del biglietto con max 2 decimali
+// console.log(54.54545454.toFixed(2)); prova del metodo .toFixed - fissiamo a 2 decimali con arrotondamento
+
+
