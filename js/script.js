@@ -8,3 +8,16 @@ L’output del prezzo finale va messo fuori in forma umana (con massimo due deci
 Aggiungerei: ocio  a non incasinarvi sui calcoli matematici, alla fine dovete applicare, in certe condizioni, degli sconti in percentuale (come fare? :faccia_nerd:)
 Buon viaggio :stazione:
 */
+
+// chiedere al cliente i km da percorrere
+let km = prompt("Indicare i chilometri da percorrere");
+// chiedere al cliente età
+let age = prompt("Inserire l'et&agrave; del viaggiatore");
+
+console.log(km),age;
+// calcolare prezzo intero del biglietto
+
+// se il cliente ha un'èta inferiore ai 18 anni applicare 20% di sconto
+// se il cliente ha un'èta superiore ai 65 anni applicare 40% di sconto
+
+// output costo esatto del biglietto con max 2 decimali
