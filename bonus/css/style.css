@@ -1,0 +1,11 @@
+div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #000;
+}
+
+#ticket{
+    font-size: 35px;
+}
