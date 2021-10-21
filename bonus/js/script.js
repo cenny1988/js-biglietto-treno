@@ -11,14 +11,21 @@ Buon viaggio :stazione:
 
 const indexPrice = 0.21;
 // chiedere al cliente i km da percorrere
-const km = prompt("Indicare i chilometri da percorrere");
+let km = prompt("Indicare i chilometri da percorrere");
+// inserisco controllo su valore inserito
+while(isNaN(km)) {
+    km = prompt("Il valore non è corretto. Inserire i chilometri da percorrere")
+}
 // chiedere al cliente età
-const age = prompt("Inserire l'età del viaggiatore");
-
+let age = prompt("Inserire l'età del viaggiatore");
+// inserisco controllo su valore inserito
+while(isNaN(age)) {
+    age = prompt("Il valore non è corretto. Inserire l'età del viaggiatore")
+}
 
 // calcolare prezzo intero del biglietto
 let ticketPrice = (km*indexPrice);
-console.log(km,age,ticketPrice);
+console.log(`I Km da percorrere sono `, km, `L'età è `, age, `Il biglietto costa `, ticketPrice);
 
 // Se il cliente ha un'età compresa tra  i 18 e 66 anni allora non va applicato nessuno sconto
 if (age<18 || age>65){
